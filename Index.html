@@ -35,15 +35,15 @@
             <div class="weatherContainer">
                 <h1 id="displayedCity" class="leftStyling"></h1> 
                 <img src="" alt="">
-                <p id="displayedTemp" class="leftStyling">Temperature: F</p>
-                <p id="displayedWind" class="leftStyling">Wind: MPH</p>
-                <p id="displayedHumidity" class="leftStyling">Humidity: %</p>
+                <p class="leftStyling">Temperature: <span id="displayedTemp"></span>°F</p>
+                <p class="leftStyling">Wind: <span id="displayedWind"></span>MPH</p>
+                <p class="leftStyling">Humidity: <span id="displayedHumidity"></span> %</p>
             </div>
             <div>
                 <h3 class="leftStyling">5-Day Forecast</h3>
                 <div class="container">
-                    <div class="row">
-                        <div class="col weatherBlock">
+                    <div class="row" id="five-day">
+                        <!-- <div class="col weatherBlock">
                             <img src="" alt=""> 
                             <p class="leftStyling">Temperature: F</p>
                             <p class="leftStyling">Wind: MPH</p>
@@ -72,7 +72,7 @@
                             <p class="leftStyling">Temperature: F</p>
                             <p class="leftStyling">Wind: MPH</p>
                             <p class="leftStyling">Humidity: %</p>
-                        </div>
+                        </div> -->
                     </div>
               </div>
             </div>
