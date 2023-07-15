@@ -14,9 +14,6 @@ var humidity1;
 
 
 
-
-
-// Grabs the weather data of typed in city
 function getWeather() {
     $.ajax({
         type: "GET",
@@ -42,19 +39,11 @@ function getWeather() {
                 `);
                     $("#five-day").append(card)
                 }
-
             }
-
-
-            // populate page with data 
-            // $("#displayedCity").text(data.city.name);
-            //$("#displayedTemp").text(temp1 + "°F") ;
-            // $("#displayedWind").text(wind1 + "MPH");
-            // $("#displayedHumidity").text(humidity1 + "%");
         }
     });
 }
-// Grabs the latitude and longitude coordinates
+
 function getCity() {
     tempCity = $("#citySearch").val();
     console.log("tempCity", tempCity);
@@ -74,7 +63,7 @@ function getCity() {
         }
     });
 }
-//Displays the Forecast on the page
+
 function getForecast() {
     getCity();
     getWeather();
@@ -88,10 +77,6 @@ function getForecast() {
 
     var temp = $(`<button onclick=getWeather() class="btn btn-secondary btn-block">${tempCity}</button>`);
     $("#savedSearches").append(temp);
-    // console.log("savedSearches", savedSearches);
-
-    // console.log("local Storage", localStorage); 
-
 }
 
 function renderHistory() {
@@ -103,10 +88,3 @@ function renderHistory() {
 
 }
 renderHistory();
-
-
-// function getFutureForecast(){
-//     $.ajax({
-//         type: "GET",
-//         url: "https://api.openweathermap.org/data/3.0/onecall/day_summary?lat={lat}&lon={lon}&date={date}&appid={API key}"
-// }
