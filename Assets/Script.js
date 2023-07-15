@@ -7,9 +7,14 @@ var cityQuery = "https://api.openweathermap.org/data/2.5/weather?q=";
 var tempCity;
 var cityData;
 var savedSearches = [];
+var cityName;
 
+
+
+
+
+// Grabs the weather data of typed in city
 function getWeather(){
-    console.log(long, lat);
     $.ajax({
         type: "GET",
         async: false,
@@ -18,10 +23,11 @@ function getWeather(){
         success: function(data){
             weatherData = data;
             console.log("weatherData", weatherData);
+            $("#displayedCity").text(data.city.name);
         }
     });
 }
-
+// Grabs the latitude and longitude coordinates
 function getCity(){
     tempCity = $("#citySearch").val();
     console.log("tempCity", tempCity);
@@ -40,7 +46,7 @@ function getCity(){
         }
     });
 }
-
+//Displays the Forecast on the page
 function getForecast(){
     getCity();
     getWeather();
@@ -48,7 +54,15 @@ function getForecast(){
     var temp = $(`<button onclick=getWeather() class="btn btn-secondary btn-block">${tempCity}</button>`);
     $("#savedSearches").append(temp);
     console.log("savedSearches", savedSearches);
+    localStorage.setItem("stringsTest", JSON.stringify(savedSearches));
+    console.log("local Storage", localStorage); 
+    // Populate attributes on page with stored data
 }
 
 function addToStorage(){
 }
+
+// function findSavedSearch() {
+//     $("#citySearch").val() = 
+
+// }
